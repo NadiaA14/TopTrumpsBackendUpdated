@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -25,4 +26,11 @@ public class CardController {
     public ResponseEntity getCard(@PathVariable Long id){
         return new ResponseEntity<>(cardRepository.findById(id), HttpStatus.OK);
     }
+
+    @GetMapping(value = "/cards/agents")
+    public ResponseEntity<List<Card>> findCardByNameQueryString(
+            @RequestParam(name="named") String name) {
+        return new ResponseEntity<>(cardRepository.findCardByName(name), HttpStatus.OK);
+    }
+
 }

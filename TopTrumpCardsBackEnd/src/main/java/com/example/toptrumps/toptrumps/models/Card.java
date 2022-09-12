@@ -9,14 +9,14 @@ import java.io.Serializable;
 public class Card implements Serializable {
     @Column(name = "name")
     private String name;
-    @Column(name = "attacker")
+    @Column(name = "attack")
     private Integer attack;
-    @Column(name = "controller")
-    private Integer controller;
-    @Column(name = "defender")
-    private Integer defender;
-    @Column(name = "initiator")
-    private Integer initiator;
+    @Column(name = "control")
+    private Integer control;
+    @Column(name = "defend")
+    private Integer defend;
+    @Column(name = "initiate")
+    private Integer initiate;
     @Column(name = "damage")
     private Integer damage;
     @Column(name = "picture")
@@ -29,12 +29,12 @@ public class Card implements Serializable {
 
     }
 
-    public Card(String name, Integer attack, Integer controller, Integer defender, Integer initiator, Integer damage, String picture) {
+    public Card(String name, Integer attack, Integer control, Integer defend, Integer initiate, Integer damage, String picture) {
         this.name = name;
         this.attack = attack;
-        this.controller = controller;
-        this.defender = defender;
-        this.initiator = initiator;
+        this.control = control;
+        this.defend = defend;
+        this.initiate = initiate;
         this.damage = damage;
         this.picture = picture;
     }
@@ -55,28 +55,28 @@ public class Card implements Serializable {
         this.attack = attack;
     }
 
-    public Integer getController() {
-        return controller;
+    public Integer getControl() {
+        return control;
     }
 
-    public void setController(Integer controller) {
-        this.controller = controller;
+    public void setControl(Integer control) {
+        this.control = control;
     }
 
-    public Integer getDefender() {
-        return defender;
+    public Integer getDefend() {
+        return defend;
     }
 
-    public void setDefender(Integer defender) {
-        this.defender = defender;
+    public void setDefend(Integer defend) {
+        this.defend = defend;
     }
 
-    public Integer getInitiator() {
-        return initiator;
+    public Integer getInitiate() {
+        return initiate;
     }
 
-    public void setInitiator(Integer initiator) {
-        this.initiator = initiator;
+    public void setInitiate(Integer initiate) {
+        this.initiate = initiate;
     }
 
     public Integer getDamage() {
